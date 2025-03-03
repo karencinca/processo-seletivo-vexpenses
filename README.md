@@ -250,6 +250,7 @@ resource "local_file" "TF-key" {
   filename = "tfkey"
 }
 ```
+
 ### Route Table Connection sem tags
 No código apresentado, é criada uma tag `Name` no recurso referente à conexão das tabelas de rotas, entretando, esse comando não é válido para essa situação. Sendo assim, esse trecho de código foi retirado. 
 
@@ -288,6 +289,8 @@ resource "aws_vpc_security_group_egress_rule" "allow_all" {
   ip_protocol = "-1"
 }
 ```
+
+Vale observar que no recurso `allow_ssh_key` não foi definido um `cidr_ipv4` para um IP específico. O ideal nesse caso seria atribuir para um IP fixo de uma VPN, onde os usuários seriam obrigados a estarem conectados para conseguir acessar o recurso alvo via SSH (uma EC2, por exemplo). Isso serviria como uma camada adicional de segurança, além do uso de chave assimétrica para SSH configurada anteriormente nesse desafio. Para fins de conveniência, foi permitido o acesso SSH de qualquer IP.
 
 ### Definição do grupo de segurança da instância
 No código apresentado, o grupo de segurança é relacionado com a instância a partir do seguinte código no `resource "aws-instance"`:
