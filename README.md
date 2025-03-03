@@ -87,7 +87,7 @@ resource "aws_subnet" "main_subnet" {
 }
 ```
 
-Depois, um recurso do tipo Internet Gateway chamado `main_igw` é definido. Ele associa o Internet Gateway à VPC criada anteriormente através do ID da VPC. Dessa forma, a VPC é conectada à internet (apesar de precisar da *route table* para funcionar). Depois é adicionda uma tag unindo o nome do projeto e o nome do candidato para facilitar a identificação no console:
+Depois, um recurso do tipo Internet Gateway chamado `main_igw` é definido. Ele associa o Internet Gateway à VPC criada anteriormente através do ID da VPC. Dessa forma, a VPC é conectada à internet (apesar de precisar da *route table* para funcionar). Depois, é adicionada uma tag unindo o nome do projeto e o nome do candidato para facilitar a identificação no console:
 
 ```tf
 resource "aws_internet_gateway" "main_igw" {
