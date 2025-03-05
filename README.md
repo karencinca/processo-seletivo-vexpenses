@@ -252,7 +252,7 @@ resource "local_file" "TF-key" {
 ```
 
 ### Route Table Connection sem tags
-No código apresentado, é criada uma tag `Name` no recurso referente à conexão das tabelas de rotas, entretando, esse comando não é válido para essa situação. Sendo assim, esse trecho de código foi retirado. 
+No código apresentado, é criada uma tag `Name` no recurso referente à conexão das tabelas de rotas, no entanto, esse comando não é válido para essa situação. Sendo assim, esse trecho de código foi retirado. 
 
 ### Regras de entrada e saída no grupo de segurança
 As regras de entrada e saída no grupo de segurança foram escritas usando o `ingress` e o `egress` como argumentos do recurso `aws_security_group` no código original. Porém, a fim de evitar conflitos de regras envolvendo blocos CIDR, o código foi alterado, passando a utilizar um recurso para cada regra de entrada e saída:
